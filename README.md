@@ -2,7 +2,7 @@
 
 Erpnext docker image
 
-* Based on: debian:wheezy
+* Based on: debian:jessie
 * Including services: 
   * Redis
   * Nginx
