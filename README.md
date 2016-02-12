@@ -21,7 +21,7 @@ Install with:
 `
 
 ## get passwords
-`docker exec -ti erpnext cat /root/frappe_passwords.txt
+`docker exec -ti erpnext cat /root/frappe_passwords.sh
 `
 Login on http://localhost with Administrator / password
 
