@@ -1,4 +1,4 @@
-FROM debian:wheezy
+FROM debian:8
 
 
 ENV FRAPPE_USER frappe
