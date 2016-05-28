@@ -13,7 +13,7 @@ Erpnext docker image
 Install with:
 
 
-## run data container
+## create a data container
 `docker create -v /home/frappe/frappe-bench/sites/site1.local/ -v /var/lib/mysql --name erpdata vmrs/erpnext:deb8
 `
 ## run erpnext
