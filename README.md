@@ -1,3 +1,8 @@
+# this is experimental
+The idea is to make it possible to update erpnext by processing `docker pull vrms/erpnext:deb8` (assuming that there is a new build availabl) and then running a new container based on that new image using the old datacontainer with all persitent data (site, database & apps)
+
+I am no sure that this actually works though yet
+
 # erpnext
 
 Erpnext docker image
@@ -17,7 +22,7 @@ Install with:
 `docker create -v /home/frappe/frappe-bench/sites/site1.local/ -v /var/lib/mysql -v /home/frappe/frappe-bench/apps --name erpdata vmrs/erpnext:deb8
 `
 
-the data contaier stores cahnges to the erpnext site, the corresponding database as well as the apps folder
+the data contaier stores changes to the erpnext site, the corresponding database as well as the apps folder
 
 ## run erpnext
 `docker run -d -p 80:80 --name erpnext --volumes-from erpdata vmrs/erpnext:deb8
