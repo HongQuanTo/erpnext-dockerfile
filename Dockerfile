@@ -1,3 +1,4 @@
+
 FROM debian:8
 
 
@@ -11,12 +12,16 @@ WORKDIR /home/$FRAPPE_USER
 
 COPY setup.sh /
 RUN  bash /setup.sh
+
 RUN apt-get -y remove build-essential python-dev python-software-properties libmariadbclient-dev libxslt1-dev libcrypto++-dev \
 libssl-dev  && apt-get -y autoremove && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/ /home/$FRAPPE_USER/.cache
+
 RUN  echo 'export TERM=xterm' >> /etc/bash.bashrc
 
-VOLUME ["/var/lib/mysql/", "/home/frappe/frappe-bench/sites/", "/home/frappe/frappe-bench/apps/"]
+VOLUME ["/var/lib/mysql/", "/home/frappe/frappe-bench/sites/", "/home/frappe/frappe-bench/apps/", "/home/frappe/frappe-bench/logs"]
+
 COPY all.conf /etc/supervisor/conf.d/
+
 EXPOSE 80
 
 CMD ["/usr/bin/supervisord","-n"]
