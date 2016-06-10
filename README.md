@@ -21,13 +21,13 @@ Install with:
 
 
 ## create a data container
-`docker create -v /home/frappe/frappe-bench/sites/ -v /var/lib/mysql/ -v /home/frappe/frappe-bench/apps/ -v /home/frappe/frappe-bench/logs --name erpdata vmrs/erpnext:deb8
+`docker create -v /home/frappe/frappe-bench/sites/ -v /var/lib/mysql/ -v /home/frappe/frappe-bench/logs --name erpdata vrms/erpnext:deb8_5
 `
 
 the data contaier stores changes to the erpnext site, the corresponding database as well as the apps folder
 
 ## run erpnext
-`docker run -d -p 80:80 --name erpnext --volumes-from erpdata vmrs/erpnext:deb8
+`docker run -d -p 80:80 --name erpnext --volumes-from erpdata vrms/erpnext:deb8_5
 `
 
 ## get passwords
