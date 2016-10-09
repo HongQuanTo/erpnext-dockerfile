@@ -11,8 +11,6 @@ COPY setup.sh /
 RUN  bash /setup.sh
 
 RUN apt-get update
-RUN apt-get -y remove build-essential python-dev python-software-properties libmariadbclient-dev libxslt1-dev libcrypto++-dev \
-libssl-dev  && apt-get -y autoremove && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/ /home/$FRAPPE_USER/.cache
 
 VOLUME ["/var/lib/mysql", "/home/frappe/frappe-bench/sites/site1.local/"]
 COPY all.conf /etc/supervisor/conf.d/
